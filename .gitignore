@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# CMAKE
+build/
+bin/
+
+# IDES's
+.vscode/
+.vs/
+
+# Working files
+*.swp
