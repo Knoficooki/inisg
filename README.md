@@ -24,6 +24,8 @@ This is a commandline program which allows you to load, save and create files wi
 >>
 >> [inisg get (-s {section}) -k {key} (-v {default value}) (-f {file}) (--delete) (--trunc)](#get)
 >>
+>> [inisg del (-s {section} &// -k {key})](#del)
+>>
 >> [inisg new (-f {file}) (--force)](#new)
 >>
 >> [inisg clear (--force)](#clear)
@@ -49,16 +51,16 @@ This is a commandline program which allows you to load, save and create files wi
 
 ### Flags
 
-> #### -f [file]
+> #### -f {file}
 > `-f` means there is a filepath in the next argument.
 
-> #### -s [section]
+> #### -s {section}
 > Sets the section. Can be ignored, if you want to select the global(or empty) section (aka section="").
 
-> #### -k [key]
+> #### -k {key}
 > Sets the key which referes to the value.
 
-> #### -v [value]
+> #### -v {value}
 > Can be used to set a key to this value or to return it if the get didn't work or the get-key is empty.
 
 <br>
