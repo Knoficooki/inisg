@@ -13,29 +13,29 @@ This is a commandline program which allows you to load, save and create files wi
 
 ## Syntax:
 >
-> ### Normal-Mode:
+> __[Normal-Mode](#inside-mode):__
 >>
->> [inisg load -f [file] (--force)](#load)
+>> [inisg load -f {file} (--force)](#load)
 >>
->> [inisg save (-f [file]) (--keep)](#save)
+>> [inisg save (-f {file}) (--keep)](#save)
 >>
->> [inisg set (-s [section]) -k [key] -v [value]](#set)
+>> [inisg set (-s {section}) -k {key} -v {value}](#set)
 >>
->> [inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)](#get)
+>> [inisg get (-s {section}) -k {key} (-v {default value}) (-f {file}) (--delete) (--trunc)](#get)
 >>
->> [inisg new (-f [file]) (--force)](#new)
+>> [inisg new (-f {file}) (--force)](#new)
 >>
 >> [inisg clear (--force)](#clear)
 
-> ### Inside-Mode:
+> __[Inside-Mode](#inside-mode)__:
 >>
->> [inisg inside set -f [file] (-s [section]) -k [key] -v [value]](#set-1)
+>> [inisg inside set -f {file} (-s {section}) -k {key} -v {value}](#set-1)
 >>
->> [inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))](#get-1)
+>> [inisg inside get -f {file} (-s {section}) -k {key} (-v {default value}) (--out (-f {output file}) (--trunc))](#get-1)
 >>
->> [inisg inside del -f [file] (-s [section] &// -k [key])](#del-1)
+>> [inisg inside del -f {file} (-s {section} &// -k {key})](#del-1)
 >>
->> [inisg inside new -f [file] (--from -f [from file])](#new-1)
+>> [inisg inside new -f {file} (--from -f {from file})](#new-1)
 
 <br>
 <br>
