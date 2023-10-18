@@ -15,23 +15,27 @@ This is a commandline program which allows you to load, save and create files wi
 >
 > ### Normal-Mode:
 >>
->> #### inisg load -f [file] (--force)
+>> [inisg load -f [file] (--force)](#load)
 >>
->> #### inisg save ([-f [file]) (--keep)
+>> [inisg save (-f [file]) (--keep)](#save)
 >>
->> #### inisg set (-s [section]) -k [key] -v [value]
+>> [inisg set (-s [section]) -k [key] -v [value]](#set)
 >>
->> #### inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)
+>> [inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)](#get)
 >>
->> #### inisg new (-f [file]) (--force)
+>> [inisg new (-f [file]) (--force)](#new)
 >>
->> #### inisg clear (--force)
+>> [inisg clear (--force)](#clear)
+
 > ### Inside-Mode:
 >>
->> #### inisg inside set -f [file] (-s [section]) -k [key] -v [value]
->> #### inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))
->> #### inisg inside del -f [file] (-s [section] &// -k [key])
->> #### inisg inside new -f [file] (--from -f [from file])
+>> [inisg inside set -f [file] (-s [section]) -k [key] -v [value]](#set-1)
+>>
+>> [inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))](#get-1)
+>>
+>> [inisg inside del -f [file] (-s [section] &// -k [key])](#del-1)
+>>
+>> [inisg inside new -f [file] (--from -f [from file])](#new-1)
 
 <br>
 <br>
