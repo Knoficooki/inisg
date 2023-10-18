@@ -1,12 +1,10 @@
-```
- _           _                
-(_)  _ __   (_)  ___    __ _  
-| | | '_ \  | | / __|  / _` | 
-| | | | | | | | \__ \ | (_| | 
-|_| |_| |_| |_| |___/  \__, | 
-                       |___/  
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="inisg_small.png">
+  <source media="(prefers-color-scheme: light)" srcset="inisg_small.png">
+  <img alt="the inisg logo" src="inisg_small.png">
+</picture>
 
+Logo-font: Overpass Mono designed by Delve Withrington, Dave Bailey, Thomas Jockin 
 
 # inisg
 This is a commandline program which allows you to load, save and create files with ini syntax. Get and set key values.
