@@ -15,7 +15,7 @@ This is a commandline program which allows you to load, save and create files wi
 >
 > ### Normal-Mode:
 >>
->> [inisg load -f [file] (--force)]()
+>> [inisg load -f [file] (--force)](#:load)
 >>
 >> [inisg save (-f [file]) (--keep)](#:save)
 >>
