@@ -17,7 +17,7 @@ This is a commandline program which allows you to load, save and create files wi
 >>
 >> [inisg load -f [file] (--force)]()
 >>
->> [inisg save ([-f [file]) (--keep)](#:save)
+>> [inisg save (-f [file]) (--keep)](#:save)
 >>
 >> [inisg set (-s [section]) -k [key] -v [value]]()
 >>
