@@ -14,7 +14,7 @@ This is a commandline program which allows you to load, save and create files wi
 ## Syntax:
 
 ---
-> __[Normal-Mode](#normal-mode):__ 
+> __[Normal-Mode](#normal-mode):__
 >
 >> [inisg load -f {file} (--force)](#load)
 >>
@@ -70,8 +70,8 @@ This is a commandline program which allows you to load, save and create files wi
 ## Normal-Mode
 
 ### load
-> ```applescript
-> inisg load -f [file] (--force)
+> ```
+> inisg load -f {file} (--force)
 > ```
 >  
 > It loads all the sections in there own directories in the .inisg/ folder and creates a file("[key].val") for every key in the section, then it writes the value of key in the key file.
@@ -81,8 +81,8 @@ This is a commandline program which allows you to load, save and create files wi
 >> Normaly when the inisg directory exists it means that there is something not saved. With --force you can override the existing structures and load a new ini file.
   
 ### save
-> ```applescript
-> inisg save (-f [file]) (--keep)
+> ```
+> inisg save (-f {file}) (--keep)
 > ```
 >
 > Loads every section directory with all its key-files in and outputs them in a file of the provided ini-filepath. If the `-f` flag isn't set, it takes the filepath from the .inisg.season.info file.
@@ -93,14 +93,14 @@ This is a commandline program which allows you to load, save and create files wi
 >> Activates the keep functionality. Doesn't delete the ./.inisg/ folder.
 
 ### set
-> ```applescript
-> inisg set (-s [section]) -k [key] -v [value]
+> ```
+> inisg set (-s {section}) -k {key} -v {value}
 > ```
 > Sets the value of the key in the section. If the value should become empty use `-v -`.
 
 ### get
-> ```applescript
-> inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)
+> ```
+> inisg get (-s {section}) -k {key} (-v {default value}) (-f {file}) (--delete) (--trunc)
 > ```
 >
 > Outputs the the value of key in section, but if the value is empty it outputs the default value. Also output it to a file if `-f` is set.
@@ -113,8 +113,8 @@ This is a commandline program which allows you to load, save and create files wi
 >> Doesn't throw an error if `-f` flag isn't set. Just ignores it.
 
 ### new
-> ```applescript
-> inisg new (-f [file]) (--force)
+> ```
+> inisg del (-s {section} &// -k {key})
 > ```
 > 
 > Creates a new setup for `inisg` and writes the filepath to the .inisg.season.info if `-f` is set.
@@ -123,8 +123,8 @@ This is a commandline program which allows you to load, save and create files wi
 >> Overrides the .inisg/ directory if it is existing and doesn't throw an error. 
 
 ### clear
-> ```applescript
-> inisg clear (--force)
+> ```
+> inisg new (-f {file}) (--force)
 > ```
 >
 > Deletes the `.inisg/` directory if it is empty.
@@ -140,14 +140,14 @@ This is a commandline program which allows you to load, save and create files wi
 > Changes the values directly inside the ini file
 
 ### set
-> ```applescript
-> inisg inside set -f [file] (-s [section]) -k [key] -v [value]
+> ```
+> inisg inside set -f {file} (-s {section}) -k {key} -v {value}
 > ```
 > Loads the ini-file (internally), changes the value of the key and saves the ini-file
 
 ### get
-> ```applescript
-> inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))
+> ```
+> inisg inside get -f {file} (-s {section}) -k {key} (-v {default value}) (--out (-f {output file}) (--trunc))
 > ```
 > Loads the ini-file (internally), ouputs the value (or default value)
 >
@@ -158,16 +158,16 @@ This is a commandline program which allows you to load, save and create files wi
 >> Doesn't throw an error if `-f` flag isn't set. Just ignores it.
 
 ### del
-> ```applescript
-> inisg inside del -f [file] (-s [section] &// -k [key])
+> ```
+> inisg inside del -f {file} (-s {section} &// -k {key})
 > ```
 > Loads the ini-file (internally), deletes the section or key, saves the ini-file
 >> #### `&//`
 >> One or both. (and or or)
 
 ### new
-> ```applescript
-> inisg inside new -f [file] (--from -f [from file])
+> ```
+> inisg inside new -f {file} (--from -f {from file})
 > ```
 > creates a new ini-file at `file`.
 >> #### `--from`
