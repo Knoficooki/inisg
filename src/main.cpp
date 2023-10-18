@@ -6,7 +6,6 @@
  * |_| |_| |_| |_| |___/  \__, | 
  *                        |___/  
  * 
- * 		IMPORTANT!
  * GIT:
  * 
  * https://github.com/Knoficooki/inisg.git
@@ -22,44 +21,9 @@
  * 
  * https://github.com/Knoficooki/inisg/blob/main/README.md
  * 
- * 
- * SYNTAX:
- * 		NORMAL-MODE:
- * 											/// "/" means "or" and "&" means "and" so "&//" means "and or or"
- *		inisg load -f [file] (--force)
- *
- *		inisg save ([-f [file]) (--keep)
- *
- *		inisg set (-s [section]) -k [key] -v [value]
- *
- *		inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)
- *
- * 		inisg del (-s [section] &// -k [key])
- *
- *		inisg new (-f [file]) (--force)
- *
- *		inisg clear (--force)
- * 
- * 		INSIDE-MODE:
- * 
- * 		inisg inside set -f [file] (-s [section]) -k [key] -v [value]
- * 
- * 		inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))
- * 
- * 		inisg inside del -f [file] (-s [section] &// -k [key])
- * 
- * 		inisg inside new -f [file] (--from -f [from file])
- * 
- * 
- * STRUCTURE:
- *	.
- *	└── .inisig/
- *	    ├── sys.ini.info
- *	    └── [SectionName]/
- *	        └── [Key].val
- * 
- * 
 ***********************************/
+
+#include "documentation.hpp"
 
 #include <string>
 
