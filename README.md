@@ -12,9 +12,10 @@
 This is a commandline program which allows you to load, save and create files with ini syntax. Get and set key values.
 
 ## Syntax:
+
+---
+> __[Normal-Mode](#normal-mode):__ 
 >
-> __[Normal-Mode](#normal-mode):__
->>
 >> [inisg load -f {file} (--force)](#load)
 >>
 >> [inisg save (-f {file}) (--keep)](#save)
@@ -27,8 +28,10 @@ This is a commandline program which allows you to load, save and create files wi
 >>
 >> [inisg clear (--force)](#clear)
 
+---
+
 > __[Inside-Mode](#inside-mode)__:
->>
+>
 >> [inisg inside set -f {file} (-s {section}) -k {key} -v {value}](#set-1)
 >>
 >> [inisg inside get -f {file} (-s {section}) -k {key} (-v {default value}) (--out (-f {output file}) (--trunc))](#get-1)
@@ -36,6 +39,7 @@ This is a commandline program which allows you to load, save and create files wi
 >> [inisg inside del -f {file} (-s {section} &// -k {key})](#del-1)
 >>
 >> [inisg inside new -f {file} (--from -f {from file})](#new-1)
+---
 
 <br>
 <br>
