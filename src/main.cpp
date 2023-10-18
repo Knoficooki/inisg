@@ -24,6 +24,8 @@
  * 
  * 
  * SYNTAX:
+ * 		NORMAL-MODE:
+ * 											/// "/" means "or" and "&" means "and" so "&//" means "and or or"
  *		inisg load -f [file] (--force)
  *
  *		inisg save ([-f [file]) (--keep)
@@ -32,10 +34,22 @@
  *
  *		inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)
  *
+ * 		inisg del (-s [section] &// -k [key])
+ *
  *		inisg new (-f [file]) (--force)
  *
  *		inisg clear (--force)
- *
+ * 
+ * 		INSIDE-MODE:
+ * 
+ * 		inisg inside set -f [file] (-s [section]) -k [key] -v [value]
+ * 
+ * 		inisg inside get -f [file] (-s [section]) -k [key] (-v [default value]) (--out (-f [output file]) (--trunc))
+ * 
+ * 		inisg inside del -f [file] (-s [section] &// -k [key])
+ * 
+ * 		inisg inside new -f [file] (--from -f [from file])
+ * 
  * 
  * STRUCTURE:
  *	.
@@ -49,6 +63,8 @@
 
 #include <string>
 
+#include "help.hpp"
+
 std::string seasoninfofile = "./.inisg/.inisg.season.info";
 std::string inisgPath = "./.inisg/";
 
@@ -56,23 +72,25 @@ std::string inisgPath = "./.inisg/";
 
 #include "actions.hpp"
 
-void help(std::string&& e = "") {
-	throw std::logic_error((
-		std::string("\t\tHelp\nSYNTAX:\n\tinisg load -f [file]\n\tinisg save ([-f [file])\n\tinisg set (-s [section]) -k [key] -v [value]\n\tinisg get (-s [section]) -k [key] (-v [default value])\n\tinisg new (-f [file])\n\tinisg clear\n\n\0")
-		 + e.c_str()).c_str());
-}
-
 std::vector<std::string> operators = {
 	"load",
 	"save",
 	"set",
 	"get",
 	"new",
-	"clear"
+	"clear",
+	"inside"
 };
 
-uint8_t isOperator(std::string&& str) {
-	return inVector<std::string, uint8_t>(str, operators);
+std::vector<std::string> insideOperators = {
+	"set",
+	"get",
+	"del",
+	"new"
+};
+
+uint8_t isOperator(std::string&& str, std::vector<std::string> ops = operators) {
+	return inVector<std::string, uint8_t>(str, ops);
 }
 
 int main(int argc, char** argv) {
@@ -358,6 +376,12 @@ int main(int argc, char** argv) {
 					}
 				}
 				del(inisgPath);
+				break;
+			}
+			case 7: {
+				if(argc < 3)
+					helpInside();
+				inside(isOperator(argv[2], insideOperators), argc, argv);
 				break;
 			}
 			default:{

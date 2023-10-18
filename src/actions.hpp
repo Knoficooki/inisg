@@ -72,3 +72,24 @@ bool load(const std::string& path, bool force = false) {
     }
     return true;
 }
+
+void inside(uint8_t op, int argc ,char** argv) {
+    switch (op)
+    {
+    case 1:
+        for (uint32_t i = 3; i < argc; i++)
+        {
+            std::string arg = argv[i];
+            if (arg == "-f")
+            {
+                /* code */
+            }
+            
+        }
+        
+        break;
+    
+    default:
+        break;
+    }
+}
