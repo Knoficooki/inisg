@@ -13,7 +13,7 @@ This is a commandline program which allows you to load, save and create files wi
 
 ## Syntax:
 >
-> __[Normal-Mode](#inside-mode):__
+> __[Normal-Mode](#normal-mode):__
 >>
 >> [inisg load -f {file} (--force)](#load)
 >>
