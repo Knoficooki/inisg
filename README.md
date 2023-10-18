@@ -15,17 +15,17 @@ This is a commandline program which allows you to load, save and create files wi
 >
 > ### Normal-Mode:
 >>
->> [inisg load -f [file] (--force)](#:load)
+>> [inisg load -f [file] (--force)](#load)
 >>
->> [inisg save (-f [file]) (--keep)](#:save)
+>> [inisg save (-f [file]) (--keep)](#save)
 >>
->> [inisg set (-s [section]) -k [key] -v [value]]()
+>> [inisg set (-s [section]) -k [key] -v [value]](#set)
 >>
->> [inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)]()
+>> [inisg get (-s [section]) -k [key] (-v [default value]) (-f [file]) (--delete) (--trunc)](#get)
 >>
->> [inisg new (-f [file]) (--force)]()
+>> [inisg new (-f [file]) (--force)](#new)
 >>
->> [inisg clear (--force)]()
+>> [inisg clear (--force)](#clear)
 
 > ### Inside-Mode:
 >>
