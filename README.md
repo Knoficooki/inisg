@@ -1,13 +1,14 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="inisg_small.png">
-  <source media="(prefers-color-scheme: light)" srcset="inisg_small.png">
-  <img alt="the inisg logo" src="inisg_small.png">
-</picture>
+![inisg logo](inisg_small.png)
 
 Logo-font: Overpass Mono designed by Delve Withrington, Dave Bailey, Thomas Jockin 
 
 # inisg
 This is a commandline program which allows you to load, save and create files with ini syntax. Get and set key values.
+
+## License
+This project is under the [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) licence.
+
+[GNU GENERAL PUBLIC LICENSE Version 2](./LICENSE)
 
 ## Syntax:
 
