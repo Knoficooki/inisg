@@ -74,21 +74,134 @@ bool load(const std::string& path, bool force = false) {
 }
 
 void inside(uint8_t op, int argc ,char** argv) {
+    std::string file;
     switch (op)
     {
-    case 1:
+    case 1: {
+        std::string section = "empty";
+        std::string key = "";
+        std::string value;
         for (uint32_t i = 3; i < argc; i++)
         {
             std::string arg = argv[i];
             if (arg == "-f")
             {
-                /* code */
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                file = argv[++i];
             }
-            
+            else if (arg == "-s") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                section = argv[++i];
+            }
+            else if (arg == "-k") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                key = argv[++i];
+            }
+            else if (arg == "-v") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                value = argv[++i];
+                if ((value = INI::trim(value)) == "-")
+							value = "";
+            }
+            else {
+                helpInside(arg + " is not a valid argument.");
+            }
         }
-        
         break;
-    
+    }
+    case 2: {
+        std::string section = "empty";
+        std::string key = "";
+        std::string value = "";
+
+        std::string outf = "";
+        std::ios_base::openmode outmode = std::ios::out;
+        bool bfisout = false; // the next `-f`'s are the output file
+        for (uint32_t i = 3; i < argc; i++)
+        {
+            std::string arg = argv[i];
+            if (arg == "-f")
+            {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                if (bfisout)
+                    outf = argv[++i];
+                else
+                    file = argv[++i];
+            }
+            else if (arg == "-s") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+            }
+            else if (arg == "-k") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+            }
+            else if (arg == "-v") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                value = argv[++i];
+                if ((value = INI::trim(value)) == "-")
+							value = "";
+            }
+            else if (arg == "--out") {
+                bfisout = true;
+            }
+            else if (arg == "--trunc") {
+                outmode |= std::ios::trunc;
+            }
+            else {
+                helpInside(arg + " is not a valid argument.");
+            }
+        }
+    }
+    case 3: {
+        for (uint32_t i = 3; i < argc; i++)
+        {
+            std::string arg = argv[i];
+            if (arg == "-f")
+            {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                file = argv[++i];
+            }
+            else if (arg == "-s") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+            }
+            else if (arg == "-k") {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+            }
+            else {
+                helpInside(arg + " is not a valid argument.");
+            }
+        }
+    }
+    case 4: {
+        std::string fromFile;
+        bool bfisfrom = false;
+        for (uint32_t i = 3; i < argc; i++)
+        {
+            std::string arg = argv[i];
+            if (arg == "-f")
+            {
+                if(argc < i+1)
+					helpInside("Missing argument!");
+                if(bfisfrom)
+                    fromFile = argv[++i];
+                else
+                    file = argv[++i];
+            }
+            else {
+                helpInside(arg + " is not a valid argument.");
+            }
+        }
+    }
     default:
         break;
     }

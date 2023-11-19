@@ -22,8 +22,14 @@
  * https://github.com/Knoficooki/inisg/blob/main/README.md
  * 
 ***********************************/
-
 #include "documentation.hpp"
+/***********************************
+ * 
+ * This Project was created and is owned by Jann Hoffmann.
+ * The creator reserves the right to make any changes to this project.
+ * Any feedback on changes, features or bugs should be sent via Github-Issue or to the email address noffie.github@icloud.com .
+ * 
+***********************************/
 
 #include <string>
 
